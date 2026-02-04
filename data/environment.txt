@@ -1,0 +1,3 @@
+The Earth's atmosphere is composed of 78% nitrogen|true
+Plastic takes about 1000 years to decompose|false
+Recycling one aluminum can saves enough energy to run a TV for 3 hours|true
