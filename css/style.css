@@ -1,17 +1,92 @@
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
+    font-size: 20px;
+    background: #dcaa68;
+    text-align: center;
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+}
+
+/*  (quiz.php)
+    <div class="container"> -->encloses the form/quiz section
+        <form class="quizresult-align" method="post" action="result.php"> 
+    
+    (result.php)
+    <div class="container quizresult-align"> -->before the results
+*/
+.container {
+    max-width: 400px;
+    margin: auto;
+    padding: 25px;
+}
+
+.quizresult-align {
+    text-align: left;
+}
+
+.quizresult-align input[type="text"] {
+    width: 90%;
+    padding: 8px;
+    margin: 10px;
 }
 
 h1 {
-    color: #333;
+    font-family: Arial, sans-serif;
+    color: brown;
+}
+
+table {
+    margin: auto;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    width: 50%;
+    background: #dcaa68;
     text-align: center;
 }
 
-p {
-    color: #666;
+tr {
+    background: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,1);
 }
+
+td, th {
+    border: none;
+    padding: 10px;
+}
+
+tr td:first-child,
+tr th:first-child {
+    border-top-left-radius:10px;
+    border-bottom-left-radius:10px;
+}
+
+tr td:last-child,
+tr th:last-child {
+    border-top-right-radius:10px;
+    border-bottom-right-radius:10px;
+}
+
+
+th {
+    background: brown;
+    color: beige;
+}
+
+a, button {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px, 12px;
+    font-size: 16px;
+    color: #2c180c;
+    border-radius: 8px;
+}
+
+a:hover, button:hover {
+    color: brown;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 60%;
+}
+
