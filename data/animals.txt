@@ -1,3 +1,12 @@
 A large, gray mammal with a trunk|Elephant
 A bird that cannot fly but swims|Penguin
 A marsupial that hops and carries its young in a pouch|Kangaroo
+Largest mammal in the world|Blue whale
+Slowest animal in the world and lives in trees|Sloth
+An animal that has a mane and is known as "King of the Jungle"|Lion
+Tiniest bird in the world|Hummingbird
+An animal with black and white stripes|Zebra
+Reptile that can change its colour to match its surroundings|Chameleon
+Mammal known for its long neck|Giraffe
+An animal with a hump on its back and lives in the desert|Camel
+An animal with black and white fur, and eats bamboo|Panda
