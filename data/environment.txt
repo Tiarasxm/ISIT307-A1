@@ -1,3 +1,12 @@
 The Earth's atmosphere is composed of 78% nitrogen|true
 Plastic takes about 1000 years to decompose|false
 Recycling one aluminum can saves enough energy to run a TV for 3 hours|true
+Plants reduce carbon dioxide in the air|true
+Bees make honey from nectar|true
+Rain water comes from clouds|true
+Plants cannot make their own food|false
+Evaporation turns water into vapour|true
+An island is not surrounded by water|false
+Pacific ocean is the largest ocean on earth|true
+The stem of a plant is the part that absorbs water from the soil|false
+Snow is erupted from volcanoes|false
