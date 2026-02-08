@@ -80,13 +80,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
                 <div class="tutorial-item">
                     <h4>Multiple Rounds</h4>
-                    <p>Play as many quizzes as you want! Your total score accumulates across all games.</p>
+                    <p> Your total score accumulates across all games.</p>
                 </div>
-                
-                <div class="tutorial-item">
-                    <h4>Leaderboard</h4>
-                    <p>Check your ranking on the leaderboard and compete with other players!</p>
-                </div>
+
             </div>
         </div>
 

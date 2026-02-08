@@ -87,8 +87,27 @@ unset($_SESSION['quiz_questions']);
             <?php endforeach; ?>
         </div>
         
+        <div class="new-quiz-form">
+            <h3>Start a New Quiz</h3>
+            <form method="post" action="quiz.php">
+                <div class="form-group">
+                    <label>Select a topic for your next quiz:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="topic" value="animals" required>
+                            <span>Animals</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="topic" value="environment">
+                            <span>Environment</span>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Start New Quiz</button>
+            </form>
+        </div>
+        
         <div class="form-actions">
-            <a href="quiz.php" class="btn">Start New Quiz</a>
             <a href="leaderboard.php" class="btn">View Leaderboard</a>
             <a href="exit.php" class="btn">Exit Game</a>
         </div>
