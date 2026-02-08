@@ -3,7 +3,18 @@ require_once "includes/functions.php";
 startSession();
 
 // Check if user is logged in
-if (!isset($_SESSION['nickname']) || !isset($_SESSION['topic'])) {
+if (!isset($_SESSION['nickname'])) {
+    header('Location: index.php');
+    exit;
+}
+
+// Update topic if provided via POST (from result.php form)
+if (isset($_POST['topic'])) {
+    $_SESSION['topic'] = $_POST['topic'];
+}
+
+// Check if topic is set
+if (!isset($_SESSION['topic'])) {
     header('Location: index.php');
     exit;
 }
@@ -45,7 +56,7 @@ $_SESSION['quiz_questions'] = $quizQuestions;
                     <!-- Animals: Text input for answer -->
                     <div class="answer-input">
                         <input type="text" name="answers[<?= $index ?>]" 
-                               placeholder="Enter your answer" required>
+                               placeholder="Enter your answer">
                     </div>
                 <?php else: ?>
                     <!-- Environment: True/False radio buttons -->
@@ -65,7 +76,6 @@ $_SESSION['quiz_questions'] = $quizQuestions;
             
             <div class="form-actions">
                 <button type="submit" class="btn">Submit Answers</button>
-                <a href="index.php" class="btn btn-secondary">Cancel</a>
             </div>
         </form>
         

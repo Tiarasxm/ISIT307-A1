@@ -9,16 +9,20 @@ if (!isset($_SESSION['nickname'])) {
 }
 
 $nickname = $_SESSION['nickname'];
-$totalPoints = $_SESSION['total_pts'] ?? 0;
+$currentGamePoints = $_SESSION['total_pts'] ?? 0;
 $quizCount = $_SESSION['quiz_count'] ?? 0;
 
 // Update leaderboard before destroying session
-updateLeaderboard($nickname, $totalPoints);
+updateLeaderboard($nickname, $currentGamePoints);
+
+// Get cumulative score from all games (previous + current)
+$cumulativePoints = getPlayerCumulativeScore($nickname);
 
 // Store data for display before destroying session
 $displayData = [
     'nickname' => $nickname,
-    'total_points' => $totalPoints,
+    'current_game_points' => $currentGamePoints,
+    'cumulative_points' => $cumulativePoints,
     'quiz_count' => $quizCount
 ];
 
@@ -37,10 +41,11 @@ session_destroy();
         <div class="final-score">
             <h2>Final Statistics</h2>
             <p>Nickname: <strong><?= htmlspecialchars($displayData['nickname']) ?></strong></p>
-            <p>Total Points Earned: <strong><?= $displayData['total_points'] ?></strong></p>
-            <p>Quizzes Completed: <strong><?= $displayData['quiz_count'] ?></strong></p>
+            <p>Current Game Points: <strong><?= $displayData['current_game_points'] ?></strong></p>
+            <p>Overall Points (All Games): <strong><?= $displayData['cumulative_points'] ?></strong></p>
+            <p>Quizzes Completed (This Game): <strong><?= $displayData['quiz_count'] ?></strong></p>
             <?php if ($displayData['quiz_count'] > 0): ?>
-            <p>Average Score per Quiz: <strong><?= round($displayData['total_points'] / $displayData['quiz_count'], 1) ?></strong></p>
+            <p>Average Score per Quiz: <strong><?= round($displayData['current_game_points'] / $displayData['quiz_count'], 1) ?></strong></p>
             <?php endif; ?>
         </div>
         

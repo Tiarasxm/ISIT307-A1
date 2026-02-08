@@ -1,4 +1,0 @@
-Player1|10
-Player2|8
-Player3|5
-test1|8

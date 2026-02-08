@@ -22,11 +22,11 @@ foreach ($questions as $index => $q) {
     $userAnswer = trim($userAnswers[$index] ?? '');
     $correctAnswer = trim($q['answer']);
     
-    // Case-insensitive comparison for text answers
-    if ($topic === 'animals') {
-        $isCorrect = strtolower($userAnswer) === strtolower($correctAnswer);
+    // Empty answers are automatically incorrect
+    if ($userAnswer === '') {
+        $isCorrect = false;
     } else {
-        // For true/false, compare directly
+        // Case-insensitive comparison for all answers
         $isCorrect = strtolower($userAnswer) === strtolower($correctAnswer);
     }
     
@@ -46,9 +46,11 @@ foreach ($questions as $index => $q) {
 
 // Calculate score
 $quizScore = calculateScore($correct, $incorrect);
+$quizScore = max(0, $quizScore); // Floor quiz score at 0
 
-// Update session data
+// Update session data with floor at 0
 $_SESSION['total_pts'] += $quizScore;
+$_SESSION['total_pts'] = max(0, $_SESSION['total_pts']); // Floor total at 0
 $_SESSION['quiz_count']++;
 
 // Clear quiz questions from session

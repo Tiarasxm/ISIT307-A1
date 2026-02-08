@@ -78,7 +78,7 @@ function updateLeaderboard($nickname, $points) {
         }
     }
     
-    // Update or add player score
+    // Update or add player score (accumulates across all games)
     if (isset($players[$nickname])) {
         $players[$nickname] += $points;
     } else {
@@ -91,6 +91,28 @@ function updateLeaderboard($nickname, $points) {
         $content .= "$name|$score\n";
     }
     file_put_contents($leaderboardFile, $content);
+}
+
+/**
+ * Get player's cumulative score from leaderboard
+ * @param string $nickname Player nickname
+ * @return int Cumulative score from all games
+ */
+function getPlayerCumulativeScore($nickname) {
+    $leaderboardFile = 'data/leaderboard.txt';
+    
+    if (file_exists($leaderboardFile)) {
+        $lines = file($leaderboardFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        foreach ($lines as $line) {
+            if (strpos($line, '|') !== false) {
+                list($name, $score) = explode('|', $line, 2);
+                if (trim($name) === $nickname) {
+                    return (int)$score;
+                }
+            }
+        }
+    }
+    return 0;
 }
 
 /**

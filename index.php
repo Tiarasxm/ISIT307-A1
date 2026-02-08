@@ -10,8 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($nickname) && in_array($topic, ['animals', 'environment'])) {
         $_SESSION['nickname'] = $nickname;
         $_SESSION['topic'] = $topic;
-        $_SESSION['total_pts'] = $_SESSION['total_pts'] ?? 0;
-        $_SESSION['quiz_count'] = $_SESSION['quiz_count'] ?? 0;
+        // Reset score for new game session
+        $_SESSION['total_pts'] = 0;
+        $_SESSION['quiz_count'] = 0;
         
         header('Location: quiz.php');
         exit;
@@ -51,10 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             <button type="submit" class="btn">Start Quiz</button>
         </form>
-        
-        <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && (empty($nickname) || !in_array($topic ?? '', ['animals', 'environment']))): ?>
-            <p class="error">Please enter a nickname and select a topic.</p>
-        <?php endif; ?>
         
         <div class="nav-links">
             <a href="leaderboard.php">View Leaderboard</a>
