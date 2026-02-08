@@ -56,6 +56,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p class="error">Please enter a nickname and select a topic.</p>
         <?php endif; ?>
         
+        <div class="tutorial-section">
+            <h2>How to Play</h2>
+            <div class="tutorial-content">
+                <div class="tutorial-item">
+                    <h4>🎯 Getting Started</h4>
+                    <p>Enter your nickname and choose between <strong>Animals</strong> or <strong>Environment</strong> topics.</p>
+                </div>
+                
+                <div class="tutorial-item">
+                    <h4>📝 Quiz Format</h4>
+                    <p>Each quiz has <strong>4 random questions</strong>. For Animals, type your answer. For Environment, choose True or False.</p>
+                </div>
+                
+                <div class="tutorial-item">
+                    <h4>🏆 Scoring</h4>
+                    <p>Correct answers: <strong>+2 points</strong><br>Incorrect answers: <strong>-1 point</strong></p>
+                </div>
+                
+                <div class="tutorial-item">
+                    <h4>🔄 Multiple Rounds</h4>
+                    <p>Play as many quizzes as you want! Your total score accumulates across all games.</p>
+                </div>
+                
+                <div class="tutorial-item">
+                    <h4>📊 Leaderboard</h4>
+                    <p>Check your ranking on the leaderboard and compete with other players!</p>
+                </div>
+            </div>
+        </div>
+        
         <div class="nav-links">
             <a href="leaderboard.php">View Leaderboard</a>
         </div>

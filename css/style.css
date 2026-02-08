@@ -261,6 +261,61 @@ input[type="radio"] {
     color: white;
 }
 
+/* Tutorial Section */
+.tutorial-section {
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    border: 2px solid rgba(139, 69, 19, 0.2);
+}
+
+.tutorial-section h2 {
+    color: #8B4513;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.tutorial-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.tutorial-item {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #8B4513;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tutorial-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.tutorial-item h4 {
+    color: #A0522D;
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tutorial-item p {
+    margin: 0;
+    color: #2c180c;
+    line-height: 1.5;
+}
+
+.tutorial-item p strong {
+    color: #8B4513;
+}
+
 /* Leaderboard Header with Dropdown */
 .leaderboard-header {
     display: flex;
