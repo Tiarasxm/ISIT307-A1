@@ -1,32 +1,28 @@
 <?php
-session_start();
+require_once "includes/functions.php";
+startSession();
+
 $sort = $_GET['sort'] ?? 'score';
-$lines = file("leaderboard.txt", FILE_IGNORE_NEW_LINES);
-$players = [];
-
-foreach ($lines as $line) 
-    {
-        list($name, $score) = explode("|", $line);
-        $score = (int)$score;
-        $players[] = ["name" => $name, "score" => (int)$score];
-    }
-
-if ($sort == "name") 
-    {
-        usort($players, fn($a, $b) => strcmp($a["name"], $b["name"]));
-    } else {
-        usort($players, fn($a, $b) => ($b["score"] - $a["score"]));
-    }
+$players = getLeaderboard($sort);
 ?>
 
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
         <title>Leaderboard</title>
     </head>
     <body>
         <div class="container center-align">
-            <h1>LEADERBOARD</h1>
+            <div class="leaderboard-header">
+                <h1>LEADERBOARD</h1>
+                <div class="filter-dropdown">
+                    <button class="dropdown-btn" onclick="toggleDropdown()">Filter By ▼</button>
+                    <div id="dropdown" class="dropdown-content">
+                        <a href="?sort=score">Score</a>
+                        <a href="?sort=name">Nickname</a>
+                    </div>
+                </div>
+            </div>
 
             <table>
                 <tr>
@@ -41,10 +37,26 @@ if ($sort == "name")
                 <?php endforeach; ?>
             </table>
 
-            <a href="?sort=name">Sort by Nickname</a><br>
-            <a href="?sort=score">Sort by Score</a>
-            <br>
             <a href="exit.php"> Exit </a>
         </div>
+
+        <script>
+            function toggleDropdown() {
+                document.getElementById("dropdown").classList.toggle("show");
+            }
+
+            // Close dropdown when clicking outside
+            window.onclick = function(event) {
+                if (!event.target.matches('.dropdown-btn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    for (var i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+        </script>
     </body>
 </html>

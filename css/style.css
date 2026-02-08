@@ -4,6 +4,7 @@ body {
     background: #dcaa68;
     text-align: center;
     padding: 20px;
+    line-height: 1.5;
 }
 
 /*  (quiz.php)
@@ -14,9 +15,16 @@ body {
     <div class="container quizresult-align"> -->before the results
 */
 .container {
-    max-width: 400px;
+    max-width: 450px;
     margin: auto;
-    padding: 25px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.center-align {
+    text-align: center;
 }
 
 .quizresult-align {
@@ -25,20 +33,42 @@ body {
 
 .quizresult-align input[type="text"] {
     width: 90%;
-    padding: 8px;
-    margin: 10px;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 h1 {
     font-family: Arial, sans-serif;
     color: brown;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #8B4513;
+    margin: 20px 0 15px 0;
+}
+
+h3 {
+    color: #A0522D;
+    margin: 15px 0 10px 0;
+}
+
+h4 {
+    color: #8B4513;
+    margin: 10px 0 5px 0;
+}
+
+p {
+    margin: 10px 0;
 }
 
 table {
-    margin: auto;
+    margin: 25px auto;
     border-collapse: separate;
-    border-spacing: 0 10px;
-    width: 50%;
+    border-spacing: 0 12px;
+    width: 70%;
     background: #dcaa68;
     text-align: center;
 }
@@ -46,12 +76,12 @@ table {
 tr {
     background: whitesmoke;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,1);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
 }
 
 td, th {
     border: none;
-    padding: 10px;
+    padding: 15px 12px;
 }
 
 tr td:first-child,
@@ -66,27 +96,234 @@ tr th:last-child {
     border-bottom-right-radius:10px;
 }
 
-
 th {
     background: brown;
     color: beige;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 18px;
 }
 
 a, button {
     display: inline-block;
-    margin: 5px;
-    padding: 8px, 12px;
+    margin: 8px 6px;
+    padding: 10px 16px;
     font-size: 16px;
     color: #2c180c;
     border-radius: 8px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
 }
 
 a:hover, button:hover {
     color: brown;
+    background: rgba(255, 255, 255, 0.95);
 }
 
 input[type="text"] {
-    padding: 10px;
-    width: 60%;
+    padding: 12px;
+    width: 65%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+input[type="radio"] {
+    margin: 0 8px 0 0;
+}
+
+.form-group {
+    margin: 20px 0;
+}
+
+.radio-group {
+    margin: 15px 0;
+}
+
+.radio-label {
+    display: inline-block;
+    margin: 8px 15px 8px 0;
+    cursor: pointer;
+}
+
+.answer-options {
+    margin: 15px 0;
+}
+
+.answer-input {
+    margin: 15px 0;
+}
+
+.question-block {
+    margin: 25px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.question-text {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.form-actions {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.nav-links {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(139, 69, 19, 0.3);
+}
+
+.player-info, .topic-info {
+    font-size: 18px;
+    color: #8B4513;
+    margin: 8px 0;
+}
+
+.score-summary {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.results-details {
+    text-align: left;
+    margin: 25px 0;
+}
+
+.result-item {
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.result-item.correct {
+    border-left: 4px solid #28a745;
+}
+
+.result-item.incorrect {
+    border-left: 4px solid #dc3545;
+}
+
+.result-status {
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.final-score {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.game-over-actions {
+    margin: 25px 0;
+}
+
+.action-buttons {
+    margin: 20px 0;
+}
+
+.farewell-message {
+    margin-top: 25px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-style: italic;
+}
+
+.error {
+    color: #dc3545;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.btn {
+    background: #8B4513;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: #6c757d;
+}
+
+.btn:hover {
+    background: #A0522D;
+    color: white;
+}
+
+/* Leaderboard Header with Dropdown */
+.leaderboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.leaderboard-header h1 {
+    margin: 0;
+    flex: 1;
+}
+
+/* Dropdown Button */
+.dropdown-btn {
+    background: #8B4513;
+    color: white;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #A0522D;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    min-width: 120px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    z-index: 1000;
+    margin-top: 5px;
+}
+
+.dropdown-content a {
+    color: #2c180c;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 8px;
+    margin: 0;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background: #dcaa68;
+    color: #8B4513;
+}
+
+.show {
+    display: block;
 }
 
