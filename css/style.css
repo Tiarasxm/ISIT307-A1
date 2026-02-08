@@ -276,10 +276,6 @@ input[type="radio"] {
     border-left: 4px solid #8B4513;
 }
 
-.tutorial-item:hover {
-    /* No hover effects */
-}
-
 .tutorial-item h4 {
     color: #A0522D;
     margin: 0 0 10px 0;
