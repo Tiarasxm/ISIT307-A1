@@ -56,6 +56,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p class="error">Please enter a nickname and select a topic.</p>
         <?php endif; ?>
         
+        <div class="nav-links">
+            <a href="leaderboard.php">View Leaderboard</a>
+        </div>
+        
         <div class="tutorial-section">
             <h2>How to Play</h2>
             <div class="tutorial-content">
@@ -85,10 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
         </div>
-        
-        <div class="nav-links">
-            <a href="leaderboard.php">View Leaderboard</a>
-        </div>
+
     </div>
 </body>
 </html>
