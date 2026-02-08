@@ -274,21 +274,16 @@ input[type="radio"] {
     padding: 20px;
     border-radius: 10px;
     border-left: 4px solid #8B4513;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tutorial-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    /* No hover effects */
 }
 
 .tutorial-item h4 {
     color: #A0522D;
     margin: 0 0 10px 0;
     font-size: 18px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
 }
 
 .tutorial-item p {
