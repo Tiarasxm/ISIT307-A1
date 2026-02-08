@@ -22,11 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 <head>
     <link rel="stylesheet" href="css/style.css">
-    <title>Quiz Game</title>
+    <title>Assignment 1</title>
 </head>
 <body>
     <div class="container center-align">
-        <h1>Welcome to the Quiz Game</h1>
+        <h1>The World Around Us</h1>
         
         <form method="post" action="">
             <div class="form-group">

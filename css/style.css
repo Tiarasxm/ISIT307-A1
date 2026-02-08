@@ -76,7 +76,6 @@ table {
 tr {
     background: whitesmoke;
     border-radius: 10px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
 }
 
 td, th {
@@ -113,7 +112,6 @@ a, button {
     border-radius: 8px;
     text-decoration: none;
     background: rgba(255, 255, 255, 0.8);
-    transition: all 0.3s ease;
 }
 
 a:hover, button:hover {
@@ -286,11 +284,11 @@ input[type="radio"] {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 .dropdown-btn:hover {
     background: #A0522D;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Dropdown Content */
@@ -301,7 +299,6 @@ input[type="radio"] {
     right: 0;
     background-color: white;
     min-width: 120px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     border-radius: 8px;
     z-index: 1000;
     margin-top: 5px;
@@ -315,7 +312,6 @@ input[type="radio"] {
     border-radius: 8px;
     margin: 0;
     background: transparent;
-    transition: all 0.3s ease;
 }
 
 .dropdown-content a:hover {
