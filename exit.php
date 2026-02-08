@@ -28,7 +28,7 @@ session_destroy();
 <html>
 <head>
     <link rel="stylesheet" href="css/style.css">
-    <title>Game Over</title>
+    <title>The World Around Us - Game Over</title>
 </head>
 <body>
     <div class="container center-align">

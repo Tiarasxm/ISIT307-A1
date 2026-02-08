@@ -9,7 +9,7 @@ $players = getLeaderboard($sort);
 <html>
     <head>
         <link rel="stylesheet" href="css/style.css">
-        <title>Leaderboard</title>
+        <title>The World Around Us - Leaderboard</title>
     </head>
     <body>
         <div class="container center-align">

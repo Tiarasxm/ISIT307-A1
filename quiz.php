@@ -28,7 +28,7 @@ $_SESSION['quiz_questions'] = $quizQuestions;
 <html>
 <head>
     <link rel="stylesheet" href="css/style.css">
-    <title>Quiz - <?= ucfirst($topic) ?></title>
+    <title>The World Around Us - Quiz</title>
 </head>
 <body>
     <div class="container center-align">

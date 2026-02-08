@@ -58,7 +58,7 @@ unset($_SESSION['quiz_questions']);
 <html>
 <head>
     <link rel="stylesheet" href="css/style.css">
-    <title>Quiz Results</title>
+    <title>The World Around Us - Results</title>
 </head>
 <body>
     <div class="container center-align">
