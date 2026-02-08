@@ -63,30 +63,32 @@ unset($_SESSION['quiz_questions']);
     <title>The World Around Us - Results</title>
 </head>
 <body>
-    <div class="container center-align">
+    <div class="container-wide center-align">
         <h1>Quiz Results</h1>
         <p class="player-info">Player: <?= htmlspecialchars($nickname) ?></p>
         <p class="topic-info">Topic: <?= ucfirst($topic) ?></p>
         
-        <div class="score-summary">
-            <h2>Your Score</h2>
-            <p>Correct Answers: <strong><?= $correct ?></strong></p>
-            <p>Incorrect Answers: <strong><?= $incorrect ?></strong></p>
-            <p>Quiz Score: <strong><?= $quizScore ?> points</strong></p>
-            <p>Total Points: <strong><?= $_SESSION['total_pts'] ?></strong></p>
-        </div>
-        
-        <div class="results-details">
-            <h3>Answer Review</h3>
-            <?php foreach ($results as $index => $result): ?>
-            <div class="result-item <?= $result['is_correct'] ? 'correct' : 'incorrect' ?>">
-                <h4>Question <?= $index + 1 ?></h4>
-                <p><?= htmlspecialchars($result['question']) ?></p>
-                <p>Your answer: <strong><?= htmlspecialchars($result['user_answer'] ?: 'Not answered') ?></strong></p>
-                <p>Correct answer: <strong><?= htmlspecialchars($result['correct_answer']) ?></strong></p>
-                <p class="result-status"><?= $result['is_correct'] ? '✓ Correct' : '✗ Incorrect' ?></p>
+        <div class="results-grid">
+            <div class="score-summary">
+                <h2>Your Score</h2>
+                <p>Correct Answers: <strong><?= $correct ?></strong></p>
+                <p>Incorrect Answers: <strong><?= $incorrect ?></strong></p>
+                <p>Quiz Score: <strong><?= $quizScore ?> points</strong></p>
+                <p>Total Points: <strong><?= $_SESSION['total_pts'] ?></strong></p>
             </div>
-            <?php endforeach; ?>
+            
+            <div class="results-details">
+                <h3>Answer Review</h3>
+                <?php foreach ($results as $index => $result): ?>
+                <div class="result-item <?= $result['is_correct'] ? 'correct' : 'incorrect' ?>">
+                    <h4>Question <?= $index + 1 ?></h4>
+                    <p><?= htmlspecialchars($result['question']) ?></p>
+                    <p>Your answer: <strong><?= htmlspecialchars($result['user_answer'] ?: 'Not answered') ?></strong></p>
+                    <p>Correct answer: <strong><?= htmlspecialchars($result['correct_answer']) ?></strong></p>
+                    <p class="result-status"><?= $result['is_correct'] ? '✓ Correct' : '✗ Incorrect' ?></p>
+                </div>
+                <?php endforeach; ?>
+            </div>
         </div>
         
         <div class="new-quiz-form">
