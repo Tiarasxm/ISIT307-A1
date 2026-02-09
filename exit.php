@@ -50,10 +50,32 @@ session_destroy();
         </div>
         
         <div class="game-over-actions">
-            <h3>What would you like to do next?</h3>
+            <h3>Start a New Game</h3>
             
-            <div class="action-buttons">
-                <a href="index.php" class="btn">Start New Game</a>
+            <form method="post" action="index.php">
+                <div class="form-group">
+                    <label for="nickname">Enter your nickname:</label>
+                    <input type="text" id="nickname" name="nickname" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Select a topic:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="topic" value="animals" required>
+                            <span>Animals</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="topic" value="environment">
+                            <span>Environment</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn">Start New Game</button>
+            </form>
+            
+            <div class="action-buttons" style="margin-top: 20px;">
                 <a href="leaderboard.php" class="btn">View Leaderboard</a>
             </div>
         </div>
